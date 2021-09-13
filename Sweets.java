@@ -2,6 +2,7 @@ package IBS_DZ1;
 
 
 import java.util.Comparator;
+import java.util.Scanner;
 ;
 
 public abstract class Sweets {
@@ -21,7 +22,9 @@ public abstract class Sweets {
     public int getWeight(){
         return weight;
     }
-
+    public int getPrice(){
+        return price;
+    }
 
     @Override
     public boolean equals(Object o){
@@ -41,10 +44,20 @@ public abstract class Sweets {
 
     public static final Comparator<Sweets> Compare_by_Weight = new Comparator<Sweets>() {
         @Override
-        public int compare(Sweets lhs, Sweets rhs) {
-            return lhs.getWeight() - rhs.getWeight();
+        public int compare(Sweets sw1, Sweets sw2) {
+                return sw1.getPrice() - sw2.getPrice();
         }
     };
+
+    public static final Comparator<Sweets> Compare_by_Price = new Comparator<Sweets>() {
+        @Override
+        public int compare(Sweets sw1, Sweets sw2) {
+            return sw1.getPrice() - sw2.getPrice();
+        }
+    };
+
+
+
 }
 
 

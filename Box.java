@@ -27,7 +27,8 @@ public class Box implements Box_use{
         Box_use.showPrice();
 
 
-        Box_use.delMinWeight(300);
+    //    Box_use.delMinWeight(0);
+        Box_use.delMinPrice(200);
 
 
         Box_use.showPrice();

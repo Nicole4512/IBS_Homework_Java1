@@ -61,21 +61,38 @@ import java.lang.IndexOutOfBoundsException;
             return sum;
         }
 
-        static void sort (){
+        static void sortWeight (){
             Collections.sort(box, Sweets.Compare_by_Weight);
         }
+        static void sortPrice (){
+         Collections.sort(box, Sweets.Compare_by_Price);
+     }
 
 
         static void delMinWeight (int sum) {
-            sort();
+            sortWeight();
             try {
                 while (getPrice() >= sum) {
-                    removeIndex(0);
+                    box.remove(0);
                 }
             }
             catch (IndexOutOfBoundsException e){
                 System.out.println("Упс, ваша сумма равна нулю, попробуйте еще раз");
             }
         }
+
+     static void delMinPrice (int sum) {
+         sortPrice();
+         try {
+             while (getPrice() >= sum) {
+                 box.remove(0);
+             }
+         }
+         catch (IndexOutOfBoundsException e){
+             System.out.println("Упс, ваша сумма равна нулю, попробуйте еще раз");
+         }
+     }
+
+
     }
 
